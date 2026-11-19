@@ -25,7 +25,7 @@ We are committed to providing a welcoming and inspiring community for all, regar
 
 If you witness or experience behavior that violates this code:
 
-1. **Report to the maintainers.** Email **conduct@flashylabs.com** with details.
+1. **Report to the maintainers.** Email **michael@flashygroup.com** with details.
 2. **Provide context.** Include the incident, date, and any relevant messages.
 3. **Confidentiality.** Reports are handled confidentially. The reporter's identity will not be disclosed without permission.
 

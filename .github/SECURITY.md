@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Flashy, please email **security@flashylabs.com** instead of using the public issue tracker.
+If you discover a security vulnerability in Flashy, please email **michael@flashygroup.com** instead of using the public issue tracker.
 
 Include:
 - Description of the vulnerability
@@ -68,13 +68,13 @@ If a vulnerability is discovered and exploited:
 2. **Notify affected parties.** Security advisories are published to the GitHub Security Advisory database.
 3. **Revoke compromised credentials.** If credentials are leaked, revocation is immediate.
 4. **Audit the logs.** Examine settlement and credential logs for unauthorized activity.
-5. **Communication.** Updates posted to security@flashylabs.com and GitHub Security Advisories.
+5. **Communication.** Updates posted to michael@flashygroup.com and GitHub Security Advisories.
 
 ## Vulnerability Disclosure
 
 We follow responsible disclosure:
 
-- Report vulnerabilities privately to **security@flashylabs.com**
+- Report vulnerabilities privately to **michael@flashygroup.com**
 - We acknowledge receipt within 48 hours
 - We provide a 90-day window to patch before public disclosure
 - Public disclosure includes a CVE identifier and detailed mitigation steps
@@ -90,8 +90,8 @@ Monitor your own `package.json` for updates and security advisories.
 
 ## Contact
 
-- **Security issues:** security@flashylabs.com
-- **General questions:** security@flashylabs.com
+- **Security issues:** michael@flashygroup.com
+- **General questions:** michael@flashygroup.com
 - **Bug reports:** GitHub Issues (for non-security bugs)
 - **Discussions:** GitHub Discussions
 

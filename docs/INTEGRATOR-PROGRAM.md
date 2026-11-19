@@ -113,7 +113,7 @@ For mission-critical integrations and long-term partnerships.
 - Infrastructure scale
 
 **Process:**
-1. Contact [partnerships@flashylabs.com](mailto:partnerships@flashylabs.com)
+1. Contact [michael@flashygroup.com](mailto:michael@flashygroup.com)
 2. Executive alignment call
 3. Custom proposal based on needs
 4. Negotiate contract (typically 2-year term)
@@ -199,7 +199,7 @@ Link to your integration docs.
 
 ### Standard Tier
 
-1. Email [partnerships@flashylabs.com](mailto:partnerships@flashylabs.com) with subject: `[INTEGRATOR] Standard Tier Application`
+1. Email [michael@flashygroup.com](mailto:michael@flashygroup.com) with subject: `[INTEGRATOR] Standard Tier Application`
 
 2. Provide:
    - Company background (founding date, funding, team size)
@@ -219,7 +219,7 @@ Link to your integration docs.
 
 ### Strategic Tier
 
-1. Email [partnerships@flashylabs.com](mailto:partnerships@flashylabs.com) with subject: `[INTEGRATOR] Strategic Tier Inquiry`
+1. Email [michael@flashygroup.com](mailto:michael@flashygroup.com) with subject: `[INTEGRATOR] Strategic Tier Inquiry`
 
 2. Include:
    - Executive summary (vision + goals)
@@ -321,7 +321,7 @@ A: Community (1 week), Standard (2 weeks), Strategic (4 weeks).
 
 ## Questions?
 
-- **Integrations:** [partnerships@flashylabs.com](mailto:partnerships@flashylabs.com)
+- **Integrations:** [michael@flashygroup.com](mailto:michael@flashygroup.com)
 - **Technical:** [GitHub Issues](https://github.com/4-foundation/flashy-examples/issues)
 - **Community:** [GitHub Discussions](https://github.com/4-foundation/flashy-examples/discussions)
 
