@@ -43,8 +43,8 @@ the Ledger. Everything else is composition in your code.
 ### 1. Set Up the Rail and Fund the Holders
 
 ```javascript
-import { RailsService } from '@flashylabs/rails'
-import { InMemoryLedgerStore } from '@flashylabs/ledger'
+import { RailsService } from '@flashyos/rails'
+import { InMemoryLedgerStore } from '@flashyos/ledger'
 
 const store = new InMemoryLedgerStore()
 const rails = new RailsService({ store })
@@ -150,7 +150,7 @@ the same four fields arrive as a token flashyID signed — `mintConsentToken`
 — and the rail's `FlashyIdVerifier` maps its claims onto the same shape.
 
 ```javascript
-import { approve } from '@flashylabs/rails'
+import { approve } from '@flashyos/rails'
 
 const consent = approve(draft, ALICE, new Date())
 // { draftId: draft.id, holderId: 'h_2c91', action: 'transfer', approvedAt } — the content-addressed id, never a typed string
@@ -180,7 +180,7 @@ const [debit, credit] = await rails.execute(draft, consent)
 ### 8. Read Back and Verify
 
 ```javascript
-import { verifyChain as verifyLedgerChain } from '@flashylabs/ledger'
+import { verifyChain as verifyLedgerChain } from '@flashyos/ledger'
 
 await rails.balance(ALICE)   // { minor: 5000, gold: 50, symbol: 'FG' }
 await rails.balance(DAVE)    // { minor: 6000, gold: 60, symbol: 'FG' }
@@ -201,7 +201,7 @@ applied in-process, is a Rails `issueGrant`:
 
 ```javascript
 import { issueRoot, attenuate, verifyChain as verifyGrantChain, agentSubject } from '@flashyid/sdk'
-import { issueGrant, FLASHY_GOLD_ID } from '@flashylabs/rails'
+import { issueGrant, FLASHY_GOLD_ID } from '@flashyos/rails'
 
 const nowSec = Math.floor(Date.now() / 1000)
 const root = issueRoot({
@@ -240,8 +240,8 @@ spender within its cap.
 ## Complete Code Example
 
 ```javascript
-import { InMemoryLedgerStore, verifyChain as verifyLedgerChain } from '@flashylabs/ledger'
-import { RailsService, approve } from '@flashylabs/rails'
+import { InMemoryLedgerStore, verifyChain as verifyLedgerChain } from '@flashyos/ledger'
+import { RailsService, approve } from '@flashyos/rails'
 import {
   parseGraph, parseIntent, findPaths,
   openRequest, consentHop, markIntroduced, toRequesterView,
@@ -343,8 +343,8 @@ Ledger errors pass through Rails **unwrapped**, so the code tells you which
 layer refused.
 
 ```javascript
-import { RailsError } from '@flashylabs/rails'
-import { LedgerError } from '@flashylabs/ledger'
+import { RailsError } from '@flashyos/rails'
+import { LedgerError } from '@flashyos/ledger'
 
 try {
   await rails.execute(draft, consent)
@@ -387,4 +387,4 @@ introduction record carries `person/` slugs, not the ledger ids.
 
 - [Deployment Patterns](../deployment/patterns.md) — how the four are deployed together
 - The API pages, each measured against source: [Ledger](../api/ledger-api.md), [Rails](../api/rails-api.md), [Magician](../api/magician-api.md), [FlashyID](../api/flashyid-api.md)
-- [Local setup](setup-local.md) §4 says which [flashy-examples](https://github.com/flashylabs/flashy-examples/tree/main/examples/05-combined-workflow) run at these commits
+- [Local setup](setup-local.md) §4 says which [flashy-examples](https://github.com/4-foundation/flashy-examples/tree/main/examples/05-combined-workflow) run at these commits

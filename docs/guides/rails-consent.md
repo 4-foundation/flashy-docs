@@ -1,6 +1,6 @@
 # Rails Consent: The Draft → Execute Gate
 
-Learn `@flashylabs/rails`, the consent layer over the Ledger. Value leaves a
+Learn `@flashyos/rails`, the consent layer over the Ledger. Value leaves a
 holder in exactly one place, `execute`, and only with a consent bound to the
 exact draft being executed. Every name below is an export of `src/index.mjs`;
 the signatures are the [Rails API](../api/rails-api.md) page's.
@@ -31,8 +31,8 @@ There is no `Rails` class and no `Rails.createConsentToken`. The service is
 `toMinor` and nothing else does.
 
 ```javascript
-import { RailsService, approve } from '@flashylabs/rails'
-import { InMemoryLedgerStore } from '@flashylabs/ledger'
+import { RailsService, approve } from '@flashyos/rails'
+import { InMemoryLedgerStore } from '@flashyos/ledger'
 
 const rails = new RailsService({ store: new InMemoryLedgerStore() })
 const alice = 'h_2c91'   // opaque ids, as the ledger requires
@@ -84,7 +84,7 @@ action. `consentTo` builds it; `approve(draft, holderId, approvedAt)` is the
 convenience that reads the draft's id and action.
 
 ```javascript
-import { consentTo } from '@flashylabs/rails'
+import { consentTo } from '@flashyos/rails'
 
 const consent = approve(draft, alice, new Date())
 // === consentTo({ draftId: draft.id, holderId: 'h_2c91', action: 'transfer', approvedAt })
@@ -123,7 +123,7 @@ up to `capMinor` of one asset, for one purpose. Caps are in **minor units**,
 so convert with `toMinor`.
 
 ```javascript
-import { issueGrant, toMinor, FLASHY_GOLD_ID } from '@flashylabs/rails'
+import { issueGrant, toMinor, FLASHY_GOLD_ID } from '@flashyos/rails'
 
 const bobGrant = issueGrant({
   grantId: 'g_bob', holderId: alice, spenderId: 'h_bob',
@@ -143,7 +143,7 @@ the parent's *remaining* amount, a different purpose (exact match — purpose is
 not a lattice), or an expiry later than the parent's.
 
 ```javascript
-import { attenuate, RailsError } from '@flashylabs/rails'
+import { attenuate, RailsError } from '@flashyos/rails'
 
 const carolGrant = attenuate(bobGrant, { grantId: 'g_carol', spenderId: 'h_carol', capMinor: toMinor(20) })
 // carolGrant.capMinor === 2000, carolGrant.parentGrantId === 'g_bob', same holder, same asset, same purpose
@@ -203,8 +203,8 @@ holder gives it. Agents suggest; humans consent.
 ## Example: Simple Consent
 
 ```javascript
-import { RailsService, approve, toGold } from '@flashylabs/rails'
-import { InMemoryLedgerStore } from '@flashylabs/ledger'
+import { RailsService, approve, toGold } from '@flashyos/rails'
+import { InMemoryLedgerStore } from '@flashyos/ledger'
 
 const rails = new RailsService({ store: new InMemoryLedgerStore() })
 
@@ -228,8 +228,8 @@ console.log(toGold(alice.minor))                // 50 — a number; formatting t
 ## Example: Delegated Spending
 
 ```javascript
-import { RailsService, issueGrant, attenuate, toMinor, FLASHY_GOLD_ID } from '@flashylabs/rails'
-import { InMemoryLedgerStore } from '@flashylabs/ledger'
+import { RailsService, issueGrant, attenuate, toMinor, FLASHY_GOLD_ID } from '@flashyos/rails'
+import { InMemoryLedgerStore } from '@flashyos/ledger'
 
 const rails = new RailsService({ store: new InMemoryLedgerStore() })
 await rails.earn({ identityId: 'h_2c91', amount: 100, source: { type: 'quest', id: 'q_1' }, idempotencyKey: 'quest:q_1:h_2c91' })
@@ -262,7 +262,7 @@ under an allowance the holder issued.
 ## Example: Attenuation Chain
 
 ```javascript
-import { issueGrant, attenuate, toMinor, FLASHY_GOLD_ID } from '@flashylabs/rails'
+import { issueGrant, attenuate, toMinor, FLASHY_GOLD_ID } from '@flashyos/rails'
 
 const root = issueGrant({
   grantId: 'g_root', holderId: 'h_2c91', spenderId: 'h_bob',
@@ -285,7 +285,7 @@ with it throws `GRANT_REVOKED` before a write, and `attenuate` refuses to
 build a child from it.
 
 ```javascript
-import { revoke } from '@flashylabs/rails'
+import { revoke } from '@flashyos/rails'
 
 const revoked = revoke(bob)
 try {
@@ -340,8 +340,8 @@ which layer refused.
 | `STORE_NOT_TRANSACTIONAL` | 500 | a transfer on a store without `appendAll` |
 
 ```javascript
-import { RailsError } from '@flashylabs/rails'
-import { LedgerError } from '@flashylabs/ledger'
+import { RailsError } from '@flashyos/rails'
+import { LedgerError } from '@flashyos/ledger'
 
 try {
   await rails.execute(draft, consent)
@@ -366,4 +366,4 @@ try {
 - Learn [Magician Routing](magician-routing.md) — consent-gated introductions, the other place "agents suggest; humans consent" is enforced in code
 - Read [FlashyID: Assertions and Delegated Authority](flashyid-oauth.md) for who signs the consent and grant tokens
 - Read the [Rails API](../api/rails-api.md) for every export, measured against source
-- [Local setup](setup-local.md) §4 says which [flashy-examples](https://github.com/flashylabs/flashy-examples/tree/main/examples/02-rails-consent) run at these commits
+- [Local setup](setup-local.md) §4 says which [flashy-examples](https://github.com/4-foundation/flashy-examples/tree/main/examples/02-rails-consent) run at these commits

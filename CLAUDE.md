@@ -6,7 +6,7 @@ Comprehensive guides, architecture explanations, API references, troubleshooting
 
 **Documentation is the source of truth.** Every page serves developers who are building with Flashy. Make it clear, complete, and accurate.
 
-**Examples are linked, not embedded.** This repository contains *explanations*. Working code lives in [flashy-examples](https://github.com/flashylabs/flashy-examples). Link generously; readers move between them.
+**Examples are linked, not embedded.** This repository contains *explanations*. Working code lives in [flashy-examples](https://github.com/4-foundation/flashy-examples). Link generously; readers move between them.
 
 **Code samples must type-check.** If a `.ts` snippet appears, it must pass `tsc --noEmit` in an appropriate environment. If a `.mjs` snippet appears, it must run without error.
 
@@ -113,16 +113,16 @@ git symbolic-ref --short refs/remotes/origin/HEAD
 **Never link to a branch.** Always link to the default branch or a specific commit hash.
 
 ```markdown
-✅ [See the example](https://github.com/flashylabs/flashy-examples/blob/main/examples/01-ledger-basics/index.mjs)
-❌ [See the example](https://github.com/flashylabs/flashy-examples/blob/claude/feature-branch/examples/01-ledger-basics/index.mjs)
+✅ [See the example](https://github.com/4-foundation/flashy-examples/blob/main/examples/01-ledger-basics/index.mjs)
+❌ [See the example](https://github.com/4-foundation/flashy-examples/blob/claude/feature-branch/examples/01-ledger-basics/index.mjs)
 ```
 
 **Link to README.md for quick start.** Link to specific files for deep dives.
 
 ```markdown
-✅ [Quick start](https://github.com/flashylabs/flashy-examples)
-✅ [Complete API](https://github.com/flashylabs/flashy-ledger/blob/main/packages/ledger/src/types.ts)
-❌ [How to use](https://github.com/flashylabs/flashy-examples/tree/main)
+✅ [Quick start](https://github.com/4-foundation/flashy-examples)
+✅ [Complete API](https://github.com/AgenteLabs/flashy-ledger/blob/main/packages/ledger/src/types.ts)
+❌ [How to use](https://github.com/4-foundation/flashy-examples/tree/main)
 ```
 
 ## Voice and Tone
@@ -148,7 +148,7 @@ Create a `.test.mjs` file in the repository for every major code sample.
 // docs/guides/ledger-101.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert';
-import { InMemoryLedgerStore, post, fromDecimal, toDecimal, FLASHY_GOLD, materialize } from '@flashylabs/ledger';
+import { InMemoryLedgerStore, post, fromDecimal, toDecimal, FLASHY_GOLD, materialize } from '@flashyos/ledger';
 
 test('Ledger 101: an EARN lands and reads back', async () => {
   const store = new InMemoryLedgerStore();
@@ -183,8 +183,8 @@ Done, and enforced by `npm test`:
 - [x] API references for each subsystem (`docs/api/*.md`), each measured
       against a named commit of its source
 - [x] Local setup guide (`docs/guides/setup-local.md`) — the sibling-checkout
-      install path, since two of the four packages (`@flashylabs/ledger`,
-      `@flashylabs/rails`) are not on the public registry; it says which are
+      install path, since two of the four packages (`@flashyos/ledger`,
+      `@flashyos/rails`) are not on the public registry; it says which are
 - [x] Link validator (`check:links`) and code sample validator (`check:samples`)
 - [x] Wired into CI (`doc-checks.yml`; `npm test` on every push and PR)
 - [x] `docs/STATUS.md` generated from the sibling manifests, no invented figures

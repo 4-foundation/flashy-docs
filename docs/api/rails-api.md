@@ -1,36 +1,36 @@
-# Rails API — `@flashylabs/rails`
+# Rails API — `@flashyos/rails`
 
 The public surface of Flashy Rails, the settlement and authorisation layer
-over `@flashylabs/ledger`, as `src/index.mjs` exports it. Every name below is
+over `@flashyos/ledger`, as `src/index.mjs` exports it. Every name below is
 an export of that file; behaviour and error codes are read from `src/rails.mjs`,
 `src/consent.mjs`, `src/errors.mjs` and `src/gold.mjs`. Where a guide in this
 repository disagrees with this page, this page was measured and the guide was
 not.
 
 Measured against flashy-rails at `1fff537` (branch `claude/dreamy-bell-2e5nq3`;
-`package.json` declares `@flashylabs/rails` `1.0.0`, `private: false`, no
-`publishConfig`). Repository: <https://github.com/FlashyLabs/flashy-rails>
+`package.json` declares `@flashyos/rails` `1.0.0`, `private: false`, no
+`publishConfig`). Repository: <https://github.com/AgenteLabs/flashy-rails>
 (private).
 
 ## Where it comes from
 
-- **Not on the public registry.** `npm view @flashylabs/rails` answered 404 on
+- **Not on the public registry.** `npm view @flashyos/rails` answered 404 on
   2026-10-10, and the manifest declares no publish target. Install from the
   sibling checkout ([Local setup](../guides/setup-local.md)).
 - Node `>=22`, ESM. The implementation is JSDoc-annotated `.mjs`; a
   hand-written `types/index.d.ts` is the TypeScript surface. The draft digest
   below uses `node:crypto`, so the service is Node-only.
-- Its one dependency is `@flashylabs/ledger`, resolved as `file:vendor/ledger`
+- Its one dependency is `@flashyos/ledger`, resolved as `file:vendor/ledger`
   — a vendored build whose manifest reads `1.0.0`. `mongodb` is optional.
-- The package name is `@flashylabs/rails`; the repository's `README.md` and
+- The package name is `@flashyos/rails`; the repository's `README.md` and
   `docs/api.md` import it under that name.
 - Amounts a caller passes are **person-facing decimals** (`25`, `10.5`);
   everything the ledger stores is minor units. `toMinor` / `toGold` are the
   only conversion, and they live here, not in the ledger.
 
 ```js
-import { RailsService, approve, issueGrant } from '@flashylabs/rails'
-import { InMemoryLedgerStore } from '@flashylabs/ledger'
+import { RailsService, approve, issueGrant } from '@flashyos/rails'
+import { InMemoryLedgerStore } from '@flashyos/ledger'
 
 const rails = new RailsService({ store: new InMemoryLedgerStore() })
 

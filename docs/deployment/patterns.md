@@ -43,7 +43,7 @@ LedgerStore
 
 ```javascript
 import { MongoClient } from 'mongodb'
-import { MongoLedgerStore, post, fromDecimal, FLASHY_GOLD, materialize, verifyChain } from '@flashylabs/ledger'
+import { MongoLedgerStore, post, fromDecimal, FLASHY_GOLD, materialize, verifyChain } from '@flashyos/ledger'
 
 const client = new MongoClient(process.env.MONGO_URL)      // from Secret Manager, never a file
 await client.connect()
@@ -92,7 +92,7 @@ LedgerStore   (TransactionalLedgerStore for transfers)
   `STORE_NOT_TRANSACTIONAL`.
 
 ```javascript
-import { RailsService, RailsClient, ROUTE_TABLE } from '@flashylabs/rails'
+import { RailsService, RailsClient, ROUTE_TABLE } from '@flashyos/rails'
 
 // In-process: the service over a durable store (Pattern 1's `store`)
 const rails = new RailsService({ store, tenantId: 'flashy' })
@@ -277,7 +277,7 @@ prevent exactly this.
 **Wrong:**
 
 ```javascript
-import { attenuate, toMinor } from '@flashylabs/rails'
+import { attenuate, toMinor } from '@flashyos/rails'
 
 const child = attenuate(parent, { grantId: 'g_child', spenderId: 'h_x', capMinor: toMinor(200) })   // throws GRANT_WIDENED when 20000 > parent.remainingMinor
 ```
@@ -309,6 +309,6 @@ echo ".env*" >> .gitignore
 
 - [Ledger API](../api/ledger-api.md) · [Rails API](../api/rails-api.md) · [Magician API](../api/magician-api.md) · [FlashyID API](../api/flashyid-api.md)
 - [Local setup](../guides/setup-local.md)
-- [Working examples](https://github.com/flashylabs/flashy-examples)
+- [Working examples](https://github.com/4-foundation/flashy-examples)
 
-**Questions?** File an issue in [flashy-docs](https://github.com/flashylabs/flashy-docs/issues) or [flashy-examples](https://github.com/flashylabs/flashy-examples/issues).
+**Questions?** File an issue in [flashy-docs](https://github.com/4-foundation/flashy-docs/issues) or [flashy-examples](https://github.com/4-foundation/flashy-examples/issues).

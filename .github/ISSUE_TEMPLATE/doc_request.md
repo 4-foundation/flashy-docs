@@ -48,6 +48,6 @@ Any other details about why this documentation is needed or who would benefit.
 
 **Before submitting:**
 - [ ] I searched the [documentation](../../docs/) for existing guides
-- [ ] I checked the [GitHub Discussions](https://github.com/flashylabs/flashy-docs/discussions) for related topics
+- [ ] I checked the [GitHub Discussions](https://github.com/4-foundation/flashy-docs/discussions) for related topics
 - [ ] My request is specific and actionable
 - [ ] I'm willing to help write or review this guide

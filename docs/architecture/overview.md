@@ -47,7 +47,7 @@ Everything past that is composition in the caller's code — see the
 
 ## System Responsibilities
 
-### Ledger (`@flashylabs/ledger`)
+### Ledger (`@flashyos/ledger`)
 
 **Core responsibility:** append-only settlement with the money invariants.
 
@@ -68,7 +68,7 @@ Everything past that is composition in the caller's code — see the
 `appendAll`. The Ledger refuses if Alice holds 40.00. Replayed with the same
 key, it returns the original entries and writes nothing.
 
-### Rails (`@flashylabs/rails`)
+### Rails (`@flashyos/rails`)
 
 **Core responsibility:** consent-gated movement of Flashy Gold, and
 constrained delegation.
